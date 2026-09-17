@@ -48,7 +48,7 @@ class PredictPipeline:
             if hasattr(model, "predict_proba"):
                 probability = round(max(model.predict_proba(data_scaled)[0])*100,2)
 
-            result = "Positive" if int(prediction)[0] == 1 else "Negative" 
+            result = "Positive" if int(prediction[0]) == 1 else "Negative" 
             logger.info(f"Prediction completed: {result}, confidence_score = {probability}") 
             return result, probability 
         except Exception as e : 
