@@ -24,6 +24,6 @@ if __name__ == "__main__":
          nltk.download(i)
 
       except Exception as e:
-         raise CustomException 
+         raise CustomException(e,sys) 
 
    logger.info("All models download")    
